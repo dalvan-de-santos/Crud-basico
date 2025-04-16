@@ -10,21 +10,33 @@ def menu():
 
 
 def criar():
-    cliente = []
 
-    print('CADASTRAR CLIENTE')
-    nome = input('Nome: ')
-    email = input('Email: ')
+    while True:
+        cliente = []
 
-    cliente.append(nome)
-    cliente.append(email)
-    clientes.append(cliente)
+        print('CADASTRAR CLIENTE')
+        nome = input('Nome: ')
+        email = input('Email: ')
 
-    print('Cliente cadastrado')
-    print(clientes)
+        cliente.append(nome)
+        cliente.append(email)
+        clientes.append(cliente)
+        print('Cliente cadastrado')
+
+        print('Deseja cadastrar mais? S/N')
+        op = input('>>>').upper()
+        if op == 'N':
+            os.system('cls')
+            break
+            
+        os.system('cls')
+
+
+
+def exibir():
+    for v in clientes:
+        print(v)
     input('>>>')
-    os.system('cls')
-
 
 
 while True:
@@ -35,4 +47,7 @@ while True:
     os.system('cls')
     if op == 1:
         criar()
+    
+    elif op == 2:
+        exibir()
 
